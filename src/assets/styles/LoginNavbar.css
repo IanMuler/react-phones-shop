@@ -1,0 +1,31 @@
+#login-navbar{
+    width: 100%;
+    height: 15rem;
+    background: #343a40;
+    animation-name: login-height;
+    animation-duration: 0.6s;
+    position: fixed;
+}
+
+#sign-up-nav{
+    width: 100%;
+    height: 5.5rem;
+    background: #343a40;
+    animation-name: sign-up-height;
+    animation-duration: 0.6s;
+    position: fixed;
+}
+
+#login-navbar nav, #sign-up-nav nav{
+    height: 5.5rem;
+}
+
+@keyframes login-height {
+    from {height: 5.5rem;}
+    to {height: 15rem;}
+  }
+
+@keyframes sign-up-height {
+    from {height: 15rem;}
+    to {height: 5.5rem;}
+  }

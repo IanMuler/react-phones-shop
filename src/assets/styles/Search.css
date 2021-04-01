@@ -1,0 +1,22 @@
+.input-group{
+    width: 350px;
+}
+
+.input-group input{
+    padding: 0px 10px;
+    height: 36px;
+    border-start-start-radius: 10px;
+    border-end-start-radius: 10px;
+    background: none;
+    border: rgba(255, 255, 255, 0.5) 1px solid;
+}
+
+.input-group button{
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+    border: rgba(255, 255, 255, 0.5) 1px solid;
+    border-left: 0px;    
+}

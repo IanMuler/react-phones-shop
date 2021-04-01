@@ -1,0 +1,20 @@
+.container-search-not{
+    width: 100%;
+    height: calc(100% - 5.5rem);
+    background: #e6e6e6;
+}
+
+.search-not{
+    width: 70%;
+    height: fit-content;
+    border-radius: 5px;
+    background: white;
+}
+
+.search-not p {
+    font-size: 20px;
+}
+
+.search-not .search-title{
+    font-size: 30px;
+}

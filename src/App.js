@@ -1,14 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import BrandPage from './pages/BrandPage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import './assets/styles/App.css'
 
 function App (){
   
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/All" component={BrandPage}/>
@@ -19,7 +20,7 @@ function App (){
         <Route exact path="/login" component={Login}/>
         <Route exact path="/sign-up" component={SignUp}/>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

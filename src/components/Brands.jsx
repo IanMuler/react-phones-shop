@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Brand from './Brand';
-import '../assets/Brands.css'
+import Banner from './Banner';
+import '../assets/styles/Brands.css'
 
 function Brands (props) {
 
       return(
+        <Fragment> 
+            <Banner banner={props.banner}/>
         <div className="container-brands">
             {props.brands.map(brand =>
                 <Brand
@@ -14,6 +17,7 @@ function Brands (props) {
                 />
             )}
         </div>
+        </Fragment> 
   );
 }
 

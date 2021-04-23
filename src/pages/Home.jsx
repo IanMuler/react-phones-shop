@@ -1,25 +1,32 @@
 import React from 'react';
-import '../assets/Home.css';
+import '../assets/styles/Home.css';
 import PrincipalNavbar from '../components/PrincipalNavbar';
 import Brands from '../components/Brands';
+import '../assets/styles/Home.css'
 
 function Home (props){
 
 const brands=[
-        {image: 'https://cnet1.cbsistatic.com/img/loW_hBqDVLptH40dbsOyy35sYPQ=/940x0/2017/01/11/2ef16f2d-3dfb-44f4-8d6c-f41cc18c43a9/nokia-logo.png', 
+        {image: 'https://i.ibb.co/jvW5Rbz/nokia-png.png', 
         href:"/Nokia"},
-        {image: 'https://cdn.worldvectorlogo.com/logos/samsung-1.svg', 
+        {image: 'https://i.ibb.co/xFqg3Gz/samsung-png.png', 
         href:"/Samsung"},
-        {image: 'https://tentulogo.com/wp-content/uploads/2018/12/xiaomi-logo-startup.jpg', 
+        {image: 'https://i.ibb.co/YBMPzFH/xiaomi-png.png', 
         href:"/Xiaomi"} 
       ]
+      
+const banner = {
+    image: 'https://i.ibb.co/4shmp50/mobile-phones-banner.png',
+    titleImage: 'https://i.ibb.co/MRRQWDj/Mobile-logo-png.png',
+    href:"/All"
+}
 
   return (
     <div className="home">
         <PrincipalNavbar
         toPushUrl={props.history}/>
         <div className="main">
-        <Brands brands={brands}/>
+        <Brands brands={brands} banner={banner}/>
         </div>
     </div>
   );

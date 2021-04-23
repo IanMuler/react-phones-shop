@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react';
 import PrincipalNavbar from '../components/PrincipalNavbar';
 import PhonesList from '../components/PhonesList';
-// import '../assets/Brands.css'
 
 const phones = [{
   brand:"Nokia",

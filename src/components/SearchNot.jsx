@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/SearchNot.css'
+import '../assets/styles/SearchNot.css'
 function SearchNot() {
       return( 
         <div className="container-search-not d-flex justify-content-center pt-5">

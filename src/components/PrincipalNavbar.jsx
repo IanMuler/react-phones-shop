@@ -1,88 +1,86 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/PrincipalNavbar.css'
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  Nav,
-  NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
-} from 'reactstrap';
+import '../assets/styles/PrincipalNavbar.css'
+import {connect} from 'react-redux';
 import Search from '../components/Search'
+import { Navbar, Nav, NavDropdown, Form } from 'react-bootstrap'
+import { signOut } from '../actions'
+
 
 const PrincipalNavbar = (props) => {
 
-  const [isOpen, setIsOpen] = useState(false);
+const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+const toggle = () => setIsOpen(!isOpen);
 
-  const [search, setSearch] = useState('');
-  
-  const onChangeSearch = (e) => {
-    setSearch(e.target.value)
-  }
+const [search, setSearch] = useState('');
 
-
-  return (
-    <div id="principal-navbar">
-      <Navbar color="dark" dark expand="md">
-        
-          <Link to="/" className="navbar-brand">
-          Phones
-          </Link>
-        
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-0" navbar>
-            <NavItem>
-              <Link to="/" className="nav-link">Home</Link>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Brands
-              </DropdownToggle>
-              <DropdownMenu right>
-              <Link to="/All">
-                <DropdownItem >
-                  All
-                </DropdownItem>
-                </Link>
-                <Link to="/Nokia">
-                <DropdownItem >
-                  Nokia
-                </DropdownItem>
-                </Link>
-                 <Link to="/Samsung">
-                <DropdownItem>
-                  Samsung
-                </DropdownItem>
-                </Link>
-                <Link to="/Xiaomi">
-                <DropdownItem>
-                  Xiaomi
-                </DropdownItem>
-                </Link>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-          <Search onChange={onChangeSearch}
-          search={search}
-          toPushUrl={props.toPushUrl}
-          />
-          <div className="d-flex ml-auto">
-         <Link to="/cart" id="icon-cart" className="nav-link navbar-text icon-cart mr-4 h3 p-0 h-100"></Link>
-          <NavbarText>Hello!</NavbarText>
-          <Link to="/login" className="nav-link text-light">Login</Link>
-          </div>
-        </Collapse>
-      </Navbar>
-    </div>
-  );
+const onChangeSearch = (e) => {
+setSearch(e.target.value)
 }
 
-export default PrincipalNavbar;
+const { actualUser } = props;
+
+return (
+<div id="principal-navbar">
+<Navbar bg="dark" variant="dark" expand="lg">
+<Link to="/" > 
+  <Navbar.Brand>PHONES</Navbar.Brand>
+</Link>  
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse className="bg-dark" id="basic-navbar-nav">
+    <Nav className="mr-auto">
+ 
+      <Link to="/" className="ml-4"> 
+      <Navbar.Text>Home</Navbar.Text>
+      </Link>  
+      <NavDropdown className="ml-4" title="Brands" id="basic-nav-dropdown">
+        
+        <NavDropdown.Item><Link to="/Nokia">Nokia</Link></NavDropdown.Item>
+        
+        <NavDropdown.Item><Link to="/Samsung">Samsung</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link to="/Xiaomi">Xiaomi</Link></NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item><Link to="/All">All</Link></NavDropdown.Item>
+      </NavDropdown>
+    </Nav>
+    <Form inline>
+      <Search onChange={onChangeSearch} search={search} toPushUrl={props.toPushUrl} />
+    </Form>
+    <div className="d-flex ml-auto row">
+        <Link to="/cart" id="icon-cart" className="nav-link navbar-text">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-cart2" viewBox="0 0 16 16">
+          <path
+            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+        </svg>
+        </Link>
+        <Navbar.Text>Hello!</Navbar.Text>
+
+      {Object.keys(actualUser).length !== 0 &&
+        <NavDropdown className="login-name" title={actualUser.username} id="dropdown-menu-align-right">
+        <NavDropdown.Item className="sign-out" onClick={props.signOut}>Sign Out</NavDropdown.Item>
+        </NavDropdown>}
+
+        {Object.keys(actualUser).length === 0 &&
+        <Link to="/login" className="nav-link text-light">Login</Link>  
+        }
+        
+
+    </div>
+  </Navbar.Collapse>
+</Navbar>
+</div>
+);
+}
+
+const mapStateToProps = state => {
+return{
+actualUser: state.actualUser
+}
+}
+
+const mapDispatchToProps = {
+  signOut,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PrincipalNavbar)

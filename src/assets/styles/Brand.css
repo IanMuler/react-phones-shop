@@ -1,16 +1,15 @@
 .container-brands a{
-    border-radius: 10%;
+    width: auto;
+    height:15%;
     overflow: hidden;
-    box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%);
     transition: 0.3s;   
 }
 
-.container-brands img  {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+.container-brands a img{
+    height: 100%;
 }
 
 .container-brands a:hover{
     transform: scale(1.1);  
+    z-index:1;
 }

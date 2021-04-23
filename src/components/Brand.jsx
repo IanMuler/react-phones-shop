@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/Brand.css'
+import '../assets/styles/Brand.css'
 import { Link } from 'react-router-dom'
 
 function Brand(props) {

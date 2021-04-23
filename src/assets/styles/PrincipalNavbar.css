@@ -3,9 +3,31 @@
 }
 
 #principal-navbar{
-    height: 5.5rem;
+    height: var(--navbar-height);
+    z-index: 1000;
 }
 
 #principal-navbar nav{
-    height: 5.5rem;
+    height: 100%;
 }
+
+#icon-cart{
+    margin-right: 10px;
+}
+
+#icon-cart svg{
+    width: 23px;
+    height: 23px
+}
+
+.login-name a{
+   color: rgba(255,255,255) !important;
+}
+
+.dropdown-menu.show a{
+    color: rgb(0, 0, 0) !important;
+ }
+
+ .navbar-collapse{
+     z-index: 1000;
+ }

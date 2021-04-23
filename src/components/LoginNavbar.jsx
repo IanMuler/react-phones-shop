@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/LoginNavbar.css'
-import {
-  Navbar
-} from 'reactstrap';
+import '../assets/styles/LoginNavbar.css'
+import { Navbar} from 'react-bootstrap'
+
 
 const LoginNavbar = (props) => {
 
   return (
     <div id={props.id}>
-      <Navbar color="dark" dark expand="md">       
+      <Navbar bg="dark" variant="dark" expand="lg">     
           <Link to="/" className="navbar-brand">
-          Phones
+          PHONES
           </Link>        
       </Navbar>
       <div className="navbar-transition"></div>

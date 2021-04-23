@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #login-form{
@@ -15,4 +16,10 @@
     background:white;
     z-index: 1;
     padding: 4rem 4rem;
+}
+
+#form-alert{
+    position: absolute;
+    top: 0;
+    margin-top: 30px;
 }

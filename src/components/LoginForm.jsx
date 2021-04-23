@@ -10,12 +10,13 @@ function LoginForm (props){
 const { usersData } = props;
 const usersAccounts = usersData.map((data, i) => usersData[i].login);
 
-const [formWrong, setFormWrong]= useState(false)
-
 const [loginValues, setLoginValues] = useState({
     username:"",
     password:""
 })
+
+const [formWrong, setFormWrong]= useState(false)
+
 
 const handleChange = (e) => {
     setLoginValues({
@@ -34,6 +35,7 @@ const handleSubmit = (e) => {
          } else {
              setFormWrong(true);
          }
+
 }
 
 return (
@@ -43,7 +45,7 @@ return (
     <h3 className="text-center pb-4">Sign-in</h3>
 
     <div className="form-group">
-        <label className="text-muted" htmlFor="exampleInputEmail1">Email or user</label>
+        <label className="text-muted" htmlFor="exampleInputEmail1">User</label>
         <input onChange={handleChange} name="username" type="user" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             placeholder="admin" value={loginValues.email}  required/>
         

@@ -1,13 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../assets/styles/SignUpForm.css';
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router';
+import { SignUpRequest } from '../actions'
+ 
+function SignUpForm (props){
 
-function SignUpForm (){
+const [signUpValues, setSignUpValues] = useState({
+        username:"",
+        password:""
+    })
+
+const handleChange = (e) => {
+    setSignUpValues({
+            ...signUpValues,
+            [e.target.name] : e.target.value,
+        })
+    }
+    
+const handleSubmit = (e) => {
+        e.preventDefault();
+        props.SignUpRequest(signUpValues);
+        props.history.push("/")
+    }
 
 return (
 <div id="sign-up-body">
     <div id="title-form-btn">
         <h3 className="pb-1">Sign-up</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
             <div id="sign-up-form">
                 <div className="row">
                     <div className="form-group col-6">
@@ -21,8 +42,8 @@ return (
                 </div>
                 <div className="row">
                     <div className="form-group col-6">
-                        <label className="text-muted">ID</label>
-                        <input type="id" className="form-control" placeholder=""  required/>
+                        <label className="text-muted">User</label>
+                        <input type="user" name="username" onChange={handleChange} value={signUpValues.username} className="form-control" placeholder=""  required/>
                     </div>
                 </div>
                 <div className="row">
@@ -33,7 +54,7 @@ return (
                     </div>
                     <div className="form-group col-6">
                         <label className="text-muted" htmlFor="exampleInputPassword1">Password</label>
-                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder=""  required/>
+                        <input type="password" name="password" onChange={handleChange} value={signUpValues.password} className="form-control" id="exampleInputPassword1" placeholder=""  required/>
                     </div>
                 </div>
                 <div className="form-check">
@@ -52,4 +73,8 @@ return (
 );
 }
 
-export default SignUpForm;
+const mapDispatchToProps = {
+    SignUpRequest,
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(SignUpForm));

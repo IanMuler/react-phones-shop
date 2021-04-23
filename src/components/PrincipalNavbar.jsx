@@ -9,10 +9,6 @@ import { signOut } from '../actions'
 
 const PrincipalNavbar = (props) => {
 
-const [isOpen, setIsOpen] = useState(false);
-
-const toggle = () => setIsOpen(!isOpen);
-
 const [search, setSearch] = useState('');
 
 const onChangeSearch = (e) => {
@@ -23,31 +19,30 @@ const { actualUser } = props;
 
 return (
 <div id="principal-navbar">
-<Navbar bg="dark" variant="dark" expand="lg">
-<Link to="/" > 
-  <Navbar.Brand>PHONES</Navbar.Brand>
-</Link>  
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse className="bg-dark" id="basic-navbar-nav">
-    <Nav className="mr-auto">
- 
-      <Link to="/" className="ml-4"> 
-      <Navbar.Text>Home</Navbar.Text>
-      </Link>  
-      <NavDropdown className="ml-4" title="Brands" id="basic-nav-dropdown">
-        
-        <NavDropdown.Item><Link to="/Nokia">Nokia</Link></NavDropdown.Item>
-        
-        <NavDropdown.Item><Link to="/Samsung">Samsung</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link to="/Xiaomi">Xiaomi</Link></NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item><Link to="/All">All</Link></NavDropdown.Item>
-      </NavDropdown>
-    </Nav>
-    <Form inline>
-      <Search onChange={onChangeSearch} search={search} toPushUrl={props.toPushUrl} />
-    </Form>
-    <div className="d-flex ml-auto row">
+  <Navbar bg="dark" variant="dark" expand="lg">
+    <Link to="/">
+    <Navbar.Brand>PHONES</Navbar.Brand>
+    </Link>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse className="bg-dark" id="basic-navbar-nav">
+      <Nav className="mr-auto">
+
+        <Link to="/" className="ml-4">
+        <Navbar.Text>Home</Navbar.Text>
+        </Link>
+        <NavDropdown className="ml-4" title="Brands" id="basic-nav-dropdown">
+
+          <NavDropdown.Item href="#/Nokia">Nokia</NavDropdown.Item>
+          <NavDropdown.Item href="#/Samsung">Samsung</NavDropdown.Item>
+          <NavDropdown.Item href="#/Xiaomi">Xiaomi</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#/All">All</NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+      <Form inline>
+        <Search onChange={onChangeSearch} search={search} />
+      </Form>
+      <div className="d-flex ml-auto row">
         <Link to="/cart" id="icon-cart" className="nav-link navbar-text">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-cart2" viewBox="0 0 16 16">
           <path
@@ -56,19 +51,19 @@ return (
         </Link>
         <Navbar.Text>Hello!</Navbar.Text>
 
-      {Object.keys(actualUser).length !== 0 &&
-        <NavDropdown className="login-name" title={actualUser.username} id="dropdown-menu-align-right">
-        <NavDropdown.Item className="sign-out" onClick={props.signOut}>Sign Out</NavDropdown.Item>
+        {Object.keys(actualUser).length !== 0 &&
+        <NavDropdown className="login-name" title={actualUser.login.username} id="dropdown-menu-align-right">
+          <NavDropdown.Item className="sign-out" onClick={props.signOut}>Sign Out</NavDropdown.Item>
         </NavDropdown>}
 
         {Object.keys(actualUser).length === 0 &&
-        <Link to="/login" className="nav-link text-light">Login</Link>  
+        <Link to="/login" className="nav-link text-light">Login</Link>
         }
-        
 
-    </div>
-  </Navbar.Collapse>
-</Navbar>
+
+      </div>
+    </Navbar.Collapse>
+  </Navbar>
 </div>
 );
 }
@@ -80,7 +75,7 @@ actualUser: state.actualUser
 }
 
 const mapDispatchToProps = {
-  signOut,
+signOut,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PrincipalNavbar)

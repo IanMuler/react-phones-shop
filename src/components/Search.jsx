@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/styles/Search.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 function Search (props){
@@ -14,7 +14,7 @@ function Search (props){
     const pressEnter = (e) => {
         if(props.search.length !== 0){
         if (e.key === 'Enter') {
-            props.toPushUrl.push(link)
+            props.history.push(link)
         }
     }
 }
@@ -32,4 +32,4 @@ function Search (props){
 );
 }
 
-export default Search;
+export default withRouter(Search);

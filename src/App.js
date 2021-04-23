@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import BrandPage from './pages/BrandPage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import Cart from './pages/Cart';
 import './assets/styles/App.css'
 
 function App (){
@@ -19,6 +20,7 @@ function App (){
         <Route path="/search" component={BrandPage}/>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/sign-up" component={SignUp}/>
+        <Route exact path="/cart" component={Cart}/>
       </Switch>
     </HashRouter>
   );

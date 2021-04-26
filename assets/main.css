@@ -69,8 +69,8 @@ body{
     color: #fff;
 }
 
-#principal-navbar{
-    height: var(--navbar-height);
+.navbar{
+    height: var(--navbar-height) !important;
     z-index: 1000;
 }
 
@@ -127,18 +127,25 @@ body{
     border-left: 0px;    
 }
 .container-brands a{
-    width: auto;
-    height:15%;
+    width: 30%;
+    height:80%;
     overflow: hidden;
-    transition: 0.3s;   
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    border: 10px solid white;
+    position: relative;
+    border-radius: 5px;
 }
 
 .container-brands a img{
-    height: 100%;
+    height: 30px;
+    transition: 0.3s;
 }
 
-.container-brands a:hover{
-    transform: scale(1.1);  
+.container-brands a:hover img{
+    transform: scale(1.3);  
     z-index:1;
 }
 .banner{
@@ -147,8 +154,8 @@ body{
     overflow: hidden;
     transition: 0.3s;  
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: left;
+    align-items: flex-end;
     border: 7px solid white;
     margin: 10px;
     position: relative;
@@ -165,12 +172,17 @@ content: "";
   filter: opacity(0.8);
 }
 
-.banner__title h1{
-    text-shadow: 1px 1px rgb(255 255 255 / 40%);
-    font: bold 80px verdana;
-    color: #333333;
-    text-transform: uppercase;
+.banner__title h4{
+    text-shadow: 1px 1px rgb(255 255 255 / 30%);
+    color: #3333335d;
     position: relative;
+    margin: 20px;
+    transition: 0.3s;
+}
+
+.banner:hover h4{
+    transform-origin: bottom left;
+    transform: scale(1.3);
 }
 
 .banner:hover{
@@ -331,6 +343,56 @@ content: "";
     z-index: 1;
     padding: 2rem 2rem;
 }
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    border-top: 1px solid rgba(80, 80, 80, 0.137);
+    border-bottom: 1px solid rgba(80, 80, 80, 0.137);
+}
+
+.cart-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+    margin-right: 60px;
+    padding-bottom: 50px;
+}
+
+.targets{
+    margin-bottom: 0;
+}
+
+ul.targets > li {
+    display: inline-block;
+}
+
+.targets li {
+    margin-right: 5px
+}
+.order-container {
+    height: calc(100% - var(--navbar-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.icon-rounded{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-rounded svg{
+    width: 70%;
+}
+
 *{
     --navbar-height: 90px;
 }

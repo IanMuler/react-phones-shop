@@ -2,8 +2,8 @@
     color: #fff;
 }
 
-#principal-navbar{
-    height: var(--navbar-height);
+.navbar{
+    height: var(--navbar-height) !important;
     z-index: 1000;
 }
 

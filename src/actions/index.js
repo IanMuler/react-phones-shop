@@ -23,3 +23,16 @@ export const SignUpRequest = (payload) => ({
     type: "SIGN_UP_REQUEST",
     payload,
 });
+
+export const search = (payload) => ({
+    type: "SEARCH",
+    payload,
+});
+
+export const deleteCart = (actualUser) => ({
+    type: "DELETE_CART",
+    actualUser,
+})
+
+
+

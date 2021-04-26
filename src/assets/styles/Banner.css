@@ -4,8 +4,8 @@
     overflow: hidden;
     transition: 0.3s;  
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: left;
+    align-items: flex-end;
     border: 7px solid white;
     margin: 10px;
     position: relative;
@@ -22,12 +22,17 @@ content: "";
   filter: opacity(0.8);
 }
 
-.banner__title h1{
-    text-shadow: 1px 1px rgb(255 255 255 / 40%);
-    font: bold 80px verdana;
-    color: #333333;
-    text-transform: uppercase;
+.banner__title h4{
+    text-shadow: 1px 1px rgb(255 255 255 / 30%);
+    color: #3333335d;
     position: relative;
+    margin: 20px;
+    transition: 0.3s;
+}
+
+.banner:hover h4{
+    transform-origin: bottom left;
+    transform: scale(1.3);
 }
 
 .banner:hover{

@@ -60,7 +60,29 @@ const reducer = (state, action) => {
                     }
                 ]
             }
-                
+
+        case 'SEARCH':
+            return {
+                ...state,
+                search: action.payload,
+            }
+
+        case 'DELETE_CART':
+                return {
+                    ...state,
+                    usersData: [
+                        ...state.usersData.filter(item => item.login.username !== action.actualUser.login.username),
+                        {
+                            login: action.actualUser.login,
+                            cart: []
+                        }
+                    ],
+                    actualUser:{
+                            login: action.actualUser.login,
+                            cart: []
+                    }
+                }
+        
         default: 
             return state;
     }

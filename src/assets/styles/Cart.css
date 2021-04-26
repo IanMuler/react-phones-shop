@@ -1,0 +1,29 @@
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    border-top: 1px solid rgba(80, 80, 80, 0.137);
+    border-bottom: 1px solid rgba(80, 80, 80, 0.137);
+}
+
+.cart-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+    margin-right: 60px;
+    padding-bottom: 50px;
+}
+
+.targets{
+    margin-bottom: 0;
+}
+
+ul.targets > li {
+    display: inline-block;
+}
+
+.targets li {
+    margin-right: 5px
+}

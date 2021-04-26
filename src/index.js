@@ -76,12 +76,15 @@ const immutableState = {
 
   media:{
     brands:{
-     Nokia: {image: 'https://i.ibb.co/jvW5Rbz/nokia-png.png', 
-             href:"/Nokia",},
+     Nokia: {image: 'https://i.ibb.co/jvW5Rbz/nokia-png.png',
+     background:"https://i.ibb.co/SQxrRbS/Nokia.jpg",        
+     href:"/Nokia",},
      Samsung: {image: 'https://i.ibb.co/xFqg3Gz/samsung-png.png', 
-              href:"/Samsung"},
+     background:"https://i.ibb.co/Fsc5y8m/Samsung.jpg",         
+     href:"/Samsung"},
      Xiaomi: {image: 'https://i.ibb.co/YBMPzFH/xiaomi-png.png', 
-              href:"/Xiaomi"} 
+     background:"https://i.ibb.co/4t4Ncw4/Xiaomi.jpg",         
+     href:"/Xiaomi"} 
     },
     homeBanner:{
       image: 'https://i.ibb.co/4shmp50/mobile-phones-banner.png',
@@ -149,7 +152,9 @@ const immutableState = {
         model: "Redmi Note 8", 
         price: 250.00, 
         imgurl:"https://http2.mlstatic.com/D_NQ_NP_796078-MLA40021979706_122019-V.webp"
-        }],             
+        }],   
+        
+    search: "",
   }
 }
 let initialState;

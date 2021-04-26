@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html{
+  background: #e6e6e6;;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -23,7 +27,9 @@ code {
 }
 
 #root{
+  min-height: 100%;
   height: 100%;
+  background: #e6e6e6;
 }
 
 /*---------------------SCROLLBAR----------------*/
@@ -89,6 +95,12 @@ body{
     color: rgb(0, 0, 0) !important;
  }
 
+ .login-name .dropdown-menu.show{
+     left: inherit;
+     right: 0;
+     min-width: 0;
+ }
+
  .navbar-collapse{
      z-index: 1000;
  }
@@ -130,20 +142,35 @@ body{
     z-index:1;
 }
 .banner{
-    width: 95%;
+    width: 90%;
     height: 60%;
-    border-radius: 10px;
     overflow: hidden;
-    
     transition: 0.3s;  
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border: 7px solid white;
+    margin: 10px;
+    position: relative;
+}
+
+.banner::before{
+content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url("https://i.ibb.co/GRJgd0V/banner-all.jpg");
+  background-position: center;
+  background-size: cover;
+  filter: opacity(0.8);
 }
 
 .banner__title h1{
-    color: #343a40;
-    font-size: 50px;
+    text-shadow: 1px 1px rgb(255 255 255 / 40%);
+    font: bold 80px verdana;
+    color: #333333;
+    text-transform: uppercase;
+    position: relative;
 }
 
 .banner:hover{
@@ -191,6 +218,34 @@ body{
 
 .search-not .search-title{
     font-size: 30px;
+}
+.brand-banner{
+    width:100%;
+    height:80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-banner img{
+    width: 10%;
+}
+
+.Nokia-banner{
+    background: rgb(249,250,252);
+    background: linear-gradient(90deg, rgba(249,250,252,1) 0%, rgba(45,86,158,1) 100%)
+}           
+
+
+.Samsung-banner{
+    background: rgb(168,189,208);
+    background: linear-gradient(90deg, rgba(168,189,208,1) 0%, rgba(157,151,177,1) 100%)
+
+}
+
+.Xiaomi-banner{
+    background: rgb(254,255,189);
+    background: linear-gradient(90deg, rgba(254,255,189,1) 0%, rgba(255,165,89,1) 100%)
 }
 #login-body{
     width: 100%;
@@ -283,3 +338,5 @@ body{
 .overflow-scroll{
     overflow-y: scroll
 }
+
+

@@ -2,9 +2,11 @@ import React, {useEffect, Fragment} from 'react';
 import PhoneCard from './PhoneCard';
 import AlertNot from './AlertNot';
 import BrandBanner from './BrandBanner';
+import { connect } from 'react-redux'
 
 function PhonesList (props) {
-    
+ 
+const { search } = props;
 const body = document.querySelector("body")
 
 useEffect(()=>{
@@ -17,11 +19,9 @@ useEffect(() => {
     }
 }, [])
 
-    const search = props.url.slice(8) // toma la busqueda desde el link
-
     let requestedPhones;
 
-    if(props.url.includes("/search/")){
+    if(props.url.includes("/search")){
        requestedPhones = props.phones.filter(phone => search.toLowerCase() === phone.brand.toLowerCase())
        if(requestedPhones.length === 0){
         requestedPhones = props.phones.filter(phone => search.toLowerCase() === phone.model.toLowerCase())
@@ -62,4 +62,10 @@ return(
 );
 }
 
-export default PhonesList;
+const mapStateToProps = state => {
+    return{
+        search: state.search,
+    }
+}
+
+export default connect(mapStateToProps,null)(PhonesList);

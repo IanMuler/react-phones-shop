@@ -13,6 +13,7 @@ function Brands (props) {
                 <Brand
                     key={brand.image}                
                     image={brand.image} 
+                    background={brand.background}
                     href={brand.href}
                 />
             )}

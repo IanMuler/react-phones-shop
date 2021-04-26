@@ -7,7 +7,7 @@ function Banner(props) {
       return(
           <Link to={props.banner.href} className="banner">
             <div className="banner__title">
-            <h1></h1>
+            <h4>See all products</h4>
             </div>
           </Link>
   );

@@ -4,15 +4,13 @@ import '../assets/styles/PrincipalNavbar.css'
 import {connect} from 'react-redux';
 import Search from '../components/Search'
 import { Navbar, Nav, NavDropdown, Form } from 'react-bootstrap'
-import { signOut } from '../actions'
+import { signOut, search } from '../actions'
 
 
 const PrincipalNavbar = (props) => {
 
-const [search, setSearch] = useState('');
-
 const onChangeSearch = (e) => {
-setSearch(e.target.value)
+props.search(e.target.value)
 }
 
 const { actualUser } = props;
@@ -40,7 +38,7 @@ return (
         </NavDropdown>
       </Nav>
       <Form inline>
-        <Search onChange={onChangeSearch} search={search} />
+        <Search onChange={onChangeSearch} />
       </Form>
       <div className="d-flex ml-auto row">
         <Link to="/cart" id="icon-cart" className="nav-link navbar-text">
@@ -76,6 +74,7 @@ actualUser: state.actualUser
 
 const mapDispatchToProps = {
 signOut,
+search,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PrincipalNavbar)

@@ -50,10 +50,10 @@ const PhoneCard = (props) => {
                 <div className="row">
                 
                 {isAdded &&
-                <button className="btn btn-success offset-4 col-4" onClick={()=>{handleDeleteButton(props.id)}}>✓ Added</button>
+                <button className="btn btn-success offset-4 col-4 offset-md-3 col-md-6" onClick={()=>{handleDeleteButton(props.id)}}>✓ Added</button>
                 }
                 {!isAdded &&
-                <button className="btn btn-secondary offset-4 col-4" onClick={handleAddButton}>+ Add</button>
+                <button className="btn btn-secondary offset-4 col-4 offset-md-3 col-md-6" onClick={handleAddButton}>+ Add</button>
                 }      
                 
                 </div>     

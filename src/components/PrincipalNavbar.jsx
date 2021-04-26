@@ -51,12 +51,12 @@ return (
         </Link>
         <Navbar.Text>Hello!</Navbar.Text>
 
-        {Object.keys(actualUser).length !== 0 &&
+        {Object.keys(actualUser).length !== 0 
+        ?
         <NavDropdown className="login-name" title={actualUser.login.username} id="dropdown-menu-align-right">
           <NavDropdown.Item className="sign-out" onClick={props.signOut}>Sign Out</NavDropdown.Item>
-        </NavDropdown>}
-
-        {Object.keys(actualUser).length === 0 &&
+        </NavDropdown>
+        :
         <Link to="/login" className="nav-link text-light">Login</Link>
         }
 

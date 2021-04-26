@@ -2,24 +2,12 @@ import React from 'react';
 import '../assets/styles/Home.css';
 import PrincipalNavbar from '../components/PrincipalNavbar';
 import Brands from '../components/Brands';
-import '../assets/styles/Home.css'
+import '../assets/styles/Home.css';
+import { connect } from 'react-redux';
 
 function Home (props){
 
-const brands=[
-        {image: 'https://i.ibb.co/jvW5Rbz/nokia-png.png', 
-        href:"/Nokia"},
-        {image: 'https://i.ibb.co/xFqg3Gz/samsung-png.png', 
-        href:"/Samsung"},
-        {image: 'https://i.ibb.co/YBMPzFH/xiaomi-png.png', 
-        href:"/Xiaomi"} 
-      ]
-      
-const banner = {
-    image: 'https://i.ibb.co/4shmp50/mobile-phones-banner.png',
-    titleImage: 'https://i.ibb.co/MRRQWDj/Mobile-logo-png.png',
-    href:"/All"
-}
+const { brands, banner } = props;
 
   return (
     <div className="home">
@@ -32,4 +20,11 @@ const banner = {
   );
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return{
+    brands: state.media.brands,
+    banner: state.media.homeBanner,
+  }
+}
+
+export default connect(mapStateToProps, null)(Home);

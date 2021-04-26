@@ -1,6 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, Fragment} from 'react';
 import PhoneCard from './PhoneCard';
 import AlertNot from './AlertNot';
+import BrandBanner from './BrandBanner';
 
 function PhonesList (props) {
     
@@ -37,8 +38,14 @@ useEffect(() => {
         props.phones.filter(phone => props.brand === phone.brand);
     }
     
-    return(
-      <div className="row mt-5 mx-5 px-5">  
+return(
+        <Fragment>
+
+    { ["Nokia","Samsung","Xiaomi"].some(brand => brand === props.brand) &&
+    <BrandBanner brand={props.brand}/>
+    }
+
+      <div className="row mt-5 mx-5 px-5"> 
            {requestedPhones?.map(phone =>
                <PhoneCard
                key={phone.id}
@@ -51,6 +58,7 @@ useEffect(() => {
            )}
         
       </div>
+      </Fragment>
 );
 }
 

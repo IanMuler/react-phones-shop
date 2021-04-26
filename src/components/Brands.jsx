@@ -9,7 +9,7 @@ function Brands (props) {
         <Fragment> 
             <Banner banner={props.banner}/>
         <div className="container-brands">
-            {props.brands.map(brand =>
+            {Object.values(props.brands).map(brand =>
                 <Brand
                     key={brand.image}                
                     image={brand.image} 

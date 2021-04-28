@@ -37,3 +37,21 @@
  .navbar-collapse{
      z-index: 1000;
  }
+
+ 
+/*--------------media queries----------------*/
+
+@media (max-width: 800px){
+
+#cart-login{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:10px
+}
+
+#icon-cart svg{
+    width: 30px;
+    height: 30px
+}
+}

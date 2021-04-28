@@ -6,3 +6,18 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+/*--------------media queries----------------*/
+
+@media (max-width: 800px){
+
+    .container-brands {
+        width: 90%;
+        height: 70%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+}

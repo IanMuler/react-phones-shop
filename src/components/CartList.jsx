@@ -20,7 +20,7 @@ const requestedPhones = props.phones
 return(
         <Fragment>
 
-      <div className="mt-5 mx-5 px-5"> 
+      <div className="mt-1 mx-1 px-1 mt-lg-5 mx-lg-5 px-lg-5"> 
            {requestedPhones?.map(phone =>
                <CartCard
                key={phone.id}

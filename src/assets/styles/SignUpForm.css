@@ -26,3 +26,13 @@
     z-index: 1;
     padding: 2rem 2rem;
 }
+
+/*--------------media queries--------------*/
+
+@media (max-width:400px){
+
+    #sign-up-form{
+        width: 330px;
+        
+    }
+}

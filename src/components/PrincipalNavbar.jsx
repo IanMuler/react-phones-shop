@@ -17,7 +17,7 @@ const { actualUser } = props;
 
 return (
 <div id="principal-navbar">
-  <Navbar bg="dark" variant="dark" expand="lg">
+  <Navbar id="principal-navbar__nav" bg="dark" variant="dark" expand="lg">
     <Link to="/">
     <Navbar.Brand>PHONES</Navbar.Brand>
     </Link>
@@ -37,10 +37,10 @@ return (
           <NavDropdown.Item href="#/All">All</NavDropdown.Item>
         </NavDropdown>
       </Nav>
-      <Form inline>
+      <Form className="d-flex justify-content-center align-items-center">
         <Search onChange={onChangeSearch} />
       </Form>
-      <div className="d-flex ml-auto row">
+      <div id="cart-login" className="d-flex ml-auto row">
         <Link to="/cart" id="icon-cart" className="nav-link navbar-text">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="bi bi-cart2" viewBox="0 0 16 16">
           <path

@@ -20,3 +20,16 @@
     transform: scale(1.3);  
     z-index:1;
 }
+
+/*--------------media queries----------------*/
+
+@media (max-width: 800px){
+
+    .container-brands a{
+        width: 100%;
+        height:33.33%;
+        border: 3px solid white;
+        margin-bottom: 5px;
+    }
+
+}

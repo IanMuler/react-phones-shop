@@ -31,7 +31,7 @@ content: "";
 }
 
 .banner:hover h4{
-    transform-origin: bottom left;
+    transform-origin: 20% 30%;
     transform: scale(1.3);
 }
 
@@ -43,4 +43,30 @@ content: "";
 .banner__img  {
     width: 30%;
     object-fit: cover;
+}
+
+/*--------------media queries----------------*/
+
+@media (max-width: 800px){
+
+    .banner{
+        height: 30%;
+    }
+
+    .banner__title h4{
+        margin: 10px;
+    }
+
+}
+
+@media (max-width: 400px){
+
+    .banner{
+        height: 30%;
+    }
+
+    .banner__title h4{
+        font-size: 16px;
+    }
+
 }

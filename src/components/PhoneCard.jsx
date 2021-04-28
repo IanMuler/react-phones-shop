@@ -40,7 +40,7 @@ const PhoneCard = (props) => {
 
       
     return(  
-        <div className= "card col-md-6 col-lg-4 product text-center">
+        <div className= "card col-sm-12 col-lg-4 product text-center">
             <div className="containerimg">
                 <img  src={props.imgurl} className="card-img-top pt-4" alt="..." />
             </div>
@@ -50,10 +50,10 @@ const PhoneCard = (props) => {
                 <div className="row">
                 
                 {isAdded &&
-                <button className="btn btn-success offset-4 col-4 offset-md-3 col-md-6" onClick={()=>{handleDeleteButton(props.id)}}>✓ Added</button>
+                <button className="btn btn-success offset-2 col-8 col-sm-8 offset-lg-4 col-lg-4 offset-md-3 col-md-6" onClick={()=>{handleDeleteButton(props.id)}}>✓ Added</button>
                 }
                 {!isAdded &&
-                <button className="btn btn-secondary offset-4 col-4 offset-md-3 col-md-6" onClick={handleAddButton}>+ Add</button>
+                <button className="btn btn-secondary offset-2 col-8 col-sm-8 offset-lg-4 col-lg-4  offset-md-3 col-md-6" onClick={handleAddButton}>+ Add</button>
                 }      
                 
                 </div>     

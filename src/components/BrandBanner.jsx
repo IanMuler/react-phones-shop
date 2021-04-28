@@ -15,7 +15,7 @@ const { image } = props;
 
 const mapStateToProps = (state,props) => {
     return{
-        image: state.media?.brands[props.brand].image
+        image: state.media.brands[props.brand].image
     }
 }
 

@@ -22,8 +22,8 @@ const { brands, banner } = props;
 
 const mapStateToProps = state => {
   return{
-    brands: state.media?.brands,
-    banner: state.media?.homeBanner,
+    brands: state.media.brands,
+    banner: state.media.homeBanner,
   }
 }
 

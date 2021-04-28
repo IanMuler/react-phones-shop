@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-// import '../assets/styles/CartCard.css'
 import { connect } from 'react-redux'
 import { deleteCartItem } from '../actions';
 import { withRouter } from 'react-router-dom'

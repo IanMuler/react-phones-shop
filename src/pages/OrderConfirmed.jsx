@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import LoginNavbar from '../components/LoginNavbar'
@@ -8,6 +8,13 @@ import { deleteCart } from '../actions'
 function OrderConfirmed (props) {
 
 const { actualUser } = props;
+console.log(props)
+
+useEffect(()=>{
+    if(props.location.from !== "/cart"){
+        props.history.push("/")
+    }         
+})
 
     return(
         <>

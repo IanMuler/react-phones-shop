@@ -27,6 +27,8 @@ useEffect(()=>{
     }         
 })
 
+console.log(props)
+
       return(
         <Fragment>
         <PrincipalNavbar/>
@@ -57,7 +59,12 @@ useEffect(()=>{
             <li><img src="//cdn.shopify.com/s/files/1/0073/7148/9327/t/2/assets/cc-google.png?v=88643151820772209" alt=""/></li>
         </ul>
 
-        <Link to="/order-confirmed"><Button variant="dark">Confirm Order</Button></Link>
+        <Link to={{
+                        pathname: "/order-confirmed",     
+                        from: props.location.pathname,
+                  }}>
+       <Button variant="dark">Confirm Order</Button>
+       </Link>
         </div>
 
         </Fragment>
